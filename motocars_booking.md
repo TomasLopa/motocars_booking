@@ -20,4 +20,3 @@ Motocars booking system application
 3. Booking system:
 - Ordering a riding circuit,
 - booking calendar.
-- ...

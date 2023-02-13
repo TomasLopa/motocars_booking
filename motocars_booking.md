@@ -18,5 +18,11 @@ Motocars booking system application
 
 
 3. Booking system:
-- Ordering a riding circuit,
+- Ordering a riding race track,
 - booking calendar.
+
+
+Database:
+- Users,
+- reservations,
+- race track

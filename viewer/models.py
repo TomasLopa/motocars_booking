@@ -25,7 +25,7 @@ class Reservation(models.Model):
     end_time = models.TimeField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     race_track = models.ForeignKey(RaceTrack, on_delete=models.CASCADE)
-    num_of_places = models.PositiveSmallIntegerField()
+    num_of_seats = models.PositiveSmallIntegerField()
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=PENDING)
 
     def __str__(self):

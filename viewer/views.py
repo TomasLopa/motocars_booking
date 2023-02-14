@@ -1,24 +1,14 @@
 from django.shortcuts import render, redirect
-from .forms import ReservationForm
-from .forms import RaceTrackForm
+from .models import RaceTrack, Reservation, Event
 
-def reservation_view(request):
-    if request.method == 'POST':
-        form = ReservationForm(request.POST)
-        if form.is_valid():
-            reservation = form.save(commit=False)
-            reservation.save()
-            return redirect('reservation_success')
-    else:
-        form = ReservationForm()
-    return render(request, 'reservation.html', {'form': form})
+def race_track_list(request):
+    tracks = RaceTrack.objects.all()
+    return render(request, 'race_track_list.html', {'tracks': tracks})
 
-def create_racetrack(request):
-    if request.method == 'POST':
-        form = RaceTrackForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('racetracks_list')
-    else:
-        form = RaceTrackForm()
-    return render(request, 'create_racetrack.html', {'form': form})
+def reservation_list(request):
+    reservations = Reservation.objects.all()
+    return render(request, 'reservation_list.html', {'reservations': reservations})
+
+def event_list(request):
+    events = Event.objects.all()
+    return render(request, 'event_list.html', {'events': events})

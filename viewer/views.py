@@ -9,6 +9,7 @@ def reservation_list(request):
     reservations = Reservation.objects.all()
     return render(request, 'reservation_list.html', {'reservations': reservations})
 
-def event_list(request):
-    events = Event.objects.all()
-    return render(request, 'event_list.html', {'events': events})
+def event_view(request):
+    event = Event.objects.get(id=1)
+    context = {'event': event}
+    return render(request, 'event.html', context)

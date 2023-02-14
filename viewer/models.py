@@ -32,5 +32,9 @@ class Reservation(models.Model):
         return f"{self.user} - {self.race_track} ({self.date} {self.start_time}-{self.end_time})"
 
 class Event(models.Model):
-    image = models.ImageField(upload_to='events/')
+    image1 = models.ImageField(upload_to='events/')
+    image2 = models.ImageField(upload_to='events/')
     comment = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.comment or 'Event image'

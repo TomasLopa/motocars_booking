@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservations</title>
+</head>
+<body>
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Reservation Page</h2>
+  {% if user.is_authenticated %}
+    <p>Vítaj, {{ user.username }}!</p>
+  {% else %}
+    <p>You need to <a href="{% url 'login' %}">login</a> to make a reservation.</p>
+  {% endif %}
+{% endblock %}
+
+</body>
+</html>

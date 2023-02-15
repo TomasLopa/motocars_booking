@@ -19,6 +19,12 @@ from viewer.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', login, name='login'),
     path('base/', base, name='base'),
+    path('events/', events, name='events'),
+    path('racetrack/', racetrack, name='racetrack'),
+    path('reservation/', reservation, name='reservation'),
+
+
 ]
 

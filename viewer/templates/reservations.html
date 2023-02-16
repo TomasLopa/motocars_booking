@@ -13,7 +13,7 @@
   {% if user.is_authenticated %}
     <p>Vítaj, {{ user.username }}!</p>
   {% else %}
-    <p>You need to <a href="{% url 'login' %}">login</a> to make a reservation.</p>
+    <p>Musíš sa prihlásiť <a href="{% url 'login' %}">login</a> k vytvorení rezervácie.</p>
   {% endif %}
 {% endblock %}
 

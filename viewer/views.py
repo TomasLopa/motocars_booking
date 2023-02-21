@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from viewer.models import *
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
+
 
 def racetrack(request):
     tracks = RaceTrack.objects.all()
@@ -19,14 +18,3 @@ def events(request):
 def base(request):
     return render(request, 'base.html')
 
-def login(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            # Authenticate the user
-            user = form.get_user()
-            login(request, user)
-            return redirect('reservation')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})

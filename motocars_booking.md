@@ -3,8 +3,8 @@ Motocars booking system application
 1. Main page: (front end parts)
 - Base informations about company,
 - contact data information, location company as maps or GPS coordimnates,
-- galery motocars,
-- galery events.
+- gallery motocars,
+- gallery events.
 
 
 2. Registration users (back end parts)

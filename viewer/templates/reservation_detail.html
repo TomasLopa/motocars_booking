@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Rezervácia - {{ reservation.date }}</h1>
+  <p><strong>Dátum:</strong> {{ reservation.date }}</p>
+  <p><strong>Trat:</strong> {{ reservation.race_track.name }}</p>
+  <p><strong>Začiatok:</strong> {{ reservation.start_time }}</p>
+  <p><strong>Koniec:</strong> {{ reservation.end_time }}</p>
+  <p><strong>Počet miest:</strong> {{ reservation.num_of_seats }}</p>
+  <p><strong>Status:</strong> {{ reservation.get_status_display }}</p>
+{% endblock %}

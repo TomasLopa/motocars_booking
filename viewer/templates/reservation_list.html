@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Rezervácie</h1>
+  <ul>
+    {% for reservation in reservation_list %}
+      <li>
+        <a href="{% url 'reservation_detail' reservation.pk %}">{{ reservation.date }} - {{ reservation.race_track.name }}</a>
+      </li>
+    {% empty %}
+      <li>Nemáte žiadne rezervácie.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

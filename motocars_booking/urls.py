@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from viewer.views import *
 from accounts.views import SignUpView
-from django.contrib.auth import login
+#from django.contrib.auth import login
 
 
 
@@ -26,15 +26,19 @@ from django.contrib.auth import login
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('login/', login, name='login'),
+    #path('login/', login, name='login'),
     path('base/', base, name='base'),
     path('events/', events, name='events'),
     path('racetrack/', racetrack, name='racetrack'),
     path('reservation/', reservation, name='reservation'),
+    path('reservation_list/', reservation_list, name='reservation_list'),
+    path('reservation_detail/', reservation_detail, name='reservation_detail'),
+    path('create_reservation/', create_reservation, name='create_reservation'),
+    #path('home/', home, name='home'),
 
 
 
-# app accounts
+    # app accounts
 
     path('accounts/signup/', SignUpView.as_view(), name='signup'),
     path('accounts/', include('django.contrib.auth.urls')),

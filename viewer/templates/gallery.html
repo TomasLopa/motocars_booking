@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Galéria obrázkov</h1>
+  <div class="row">
+    {% for event in events %}
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="{{ event.image1.url }}" target="_blank">
+            <img src="{{ event.image1.url }}" alt="Image 1" style="width:100%">
+          </a>
+          {% if event.image2 %}
+            <a href="{{ event.image2.url }}" target="_blank">
+              <img src="{{ event.image2.url }}" alt="Image 2" style="width:100%">
+            </a>
+          {% endif %}
+          <div class="caption">
+            <p>{{ event.comment }}</p>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>V tejto galérii nie sú žiadne obrázky.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

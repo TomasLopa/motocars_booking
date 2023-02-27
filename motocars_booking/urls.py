@@ -34,7 +34,8 @@ urlpatterns = [
     path('reservation_list/', reservation_list, name='reservation_list'),
     path('reservation_detail/', reservation_detail, name='reservation_detail'),
     path('create_reservation/', create_reservation, name='create_reservation'),
-    #path('home/', home, name='home'),
+    path('gallery/', gallery, name='gallery'),
+    path('', home, name='home'),
 
 
 

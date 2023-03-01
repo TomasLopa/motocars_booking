@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Vymazať rezerváciu</h1>
+  <p>Naozaj chcete vymazať rezerváciu "{{ reservation }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Áno">
+    <a href="{% url 'reservation_detail' reservation.pk %}">Nie</a>
+  </form>
+{% endblock %}

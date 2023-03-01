@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Vaše rezervácie</h1>
+  {% if reservations %}
+    <ul>
+      {% for reservation in reservations %}
+        <li>
+          <a href="{% url 'reservation_detail' reservation.id %}">
+            {{ reservation.date|date:"SHORT_DATE_FORMAT" }} - {{ reservation.race_track.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Zatiaľ nemáte žiadne rezervácie.</p>
+  {% endif %}
+{% endblock %}
+
+</html>

@@ -23,6 +23,7 @@ from accounts.views import SignUpView
 
 
 
+
 urlpatterns = [
 
     path('admin/', admin.site.urls),
@@ -33,7 +34,12 @@ urlpatterns = [
     path('reservation/', reservation, name='reservation'),
     path('reservation_list/', reservation_list, name='reservation_list'),
     path('reservation_detail/', reservation_detail, name='reservation_detail'),
-    path('create_reservation/', create_reservation, name='create_reservation'),
+    # path('create_reservation/', create_reservation, name='create_reservation'),
+    path('reservation_new/', reservation_new, name='reservation_new'),
+    path('reservation_delete/', reservation_delete, name='reservation_delete'),
+    path('reservation_user/', reservation_user, name='reservation_user'),
+
+
     path('home/', home, name='home'),
 
 

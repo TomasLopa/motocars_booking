@@ -15,6 +15,14 @@
   {% else %}
     <p>Musíš sa prihlásiť <a href="{% url 'login' %}">login</a> k vytvorení rezervácie.</p>
   {% endif %}
+
+    <ul>
+      <li><a href="{% url 'reservation_list' %}">Všetky rezervácie</a></li>
+      <li><a href="{% url 'reservation_new' %}">Nová rezervácia</a></li>
+      <li><a href="{% url 'reservation_detail' %}">Detail rezervacie</a></li>
+
+    </ul>
+
 {% endblock %}
 
 </body>

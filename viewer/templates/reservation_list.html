@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Rezervácie</h1>
+  <h2>Tvoja rezervacia:</h2>
   <ul>
-    {% for reservation in reservation_list %}
-      <li>
-        <a href="{% url 'reservation_detail' reservation.pk %}">{{ reservation.date }} - {{ reservation.race_track.name }}</a>
-      </li>
+    {% for reservation in reservations %}
+      <li>{{ reservation.date }} {{ reservation.start_time }} - {{ reservation.end_time }} - {{ reservation.race_track.name }} - {{ reservation.num_of_seats }} seats - {{ reservation.status }}</li>
     {% empty %}
-      <li>Nemáte žiadne rezervácie.</li>
+      <li>No reservations found.</li>
     {% endfor %}
   </ul>
 {% endblock %}

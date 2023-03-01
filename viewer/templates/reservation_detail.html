@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Rezervácia - {{ reservation.date }}</h1>
-  <p><strong>Dátum:</strong> {{ reservation.date }}</p>
-  <p><strong>Trat:</strong> {{ reservation.race_track.name }}</p>
-  <p><strong>Začiatok:</strong> {{ reservation.start_time }}</p>
-  <p><strong>Koniec:</strong> {{ reservation.end_time }}</p>
-  <p><strong>Počet miest:</strong> {{ reservation.num_of_seats }}</p>
-  <p><strong>Status:</strong> {{ reservation.get_status_display }}</p>
+  <h1>Detaily rezervácie</h1>
+  <p>Dátum: {{ reservation.date }}</p>
+  <p>Začiatočný čas: {{ reservation.start_time }}</p>
+  <p>Koncový čas: {{ reservation.end_time }}</p>
+  <p>Počet sedadiel: {{ reservation.num_of_seats }}</p>
+  <p>Status: {{ reservation.get_status_display }}</p>
+  <a href="{% url 'reservation_edit' reservation.pk %}">Upraviť</a>
+  <a href="{% url 'reservation_delete' reservation.pk %}">Vymazať</a>
 {% endblock %}

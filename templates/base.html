@@ -2,29 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title></title>
 </head>
 <body>
+<h1>Motokary Strážske</h1>
 
-<div class="header">
-        <h1>Motokary Strážske</h1>
-        <div class="menu">
-            <ul>
+<ul>
                 <li><a href="{% url 'events' %}">Events</a></li>
                 <li><a href="{% url 'racetrack' %}">Race Track</a></li>
                 <li><a href="{% url 'reservation' %}">Reservation</a></li>
                 <li><a href="{% url 'login' %}">Login</a></li>
-            </ul>
-        </div>
-    </div>
+</ul>
 
-    <div class="content">
-        {% block content %}
-        {% endblock %}
-    </div>
 
     <div class="footer">
-        <p>© 2023 Motokary Strážske</p>
+    <p>© 2023 Motokary Strážske</p>
+
+
     </div>
 
 </body>

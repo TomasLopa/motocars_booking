@@ -1,15 +1,43 @@
 {% extends 'base.html' %}
 
-{% block title %}Prihlásenie{% endblock %}
+{% block title %}{{ login }}{% endblock %}
 
 {% block content %}
     <div class="login_form">
-        <h2>Prihlásenie</h2>
+        <h2>Login</h2>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" id="id_submit">Prihlásiť sa</button>
+            <button type="submit" id="id_submit" class="btn">Login</button>
         </form>
-        You can <a href="{% url 'signup' %}" id="id_sign_up">sign up here</a>.
+        Tu sa môžeš zaregistrovať <a href="{% url 'signup' %}" id="id_sign_up" class="btn">Registrácia</a>
     </div>
+
+    <style>
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        .btn:hover,
+        .btn:focus {
+            color: #fff;
+            text-decoration: none;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
 {% endblock %}

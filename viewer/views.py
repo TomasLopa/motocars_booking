@@ -3,7 +3,7 @@ from viewer.models import *
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import ReservationForm
-from .models import Reservation, Event
+from .models import Reservation
 
 
 
@@ -44,15 +44,9 @@ def events(request):
     context = {'events': events}
     return render(request, 'events.html', context)
 
-def gallery(request):
-    events = Event.objects.all()
-    return render(request, 'gallery.html', {'events': events})
-
-
 def base(request):
     return render(request, 'base.html')
 
 def home(request):
     return render(request, 'home.html')
-
 

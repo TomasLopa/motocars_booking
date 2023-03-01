@@ -2,25 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <title></title>
+<style>
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    background-color: none; /* nastaví farbu pozadia */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  li {
+    margin-right: 10px;
+    background-color: #fff; /* nastaví farbu pozadia jednotlivých prvkov */
+    color: #333; /* nastaví farbu textu */
+    padding: 0px; /* pridá odsadenie vnútri jednotlivých prvkov */
+    border-radius: 5px; /* zaoblené rohy */
+    text-decoration: none; /* odstráni podčiarknutie */
+  }
+  .header {
+    background-color: #333; /* nastaví farbu pozadia hlavičky */
+    color: #fff; /* nastaví farbu textu hlavičky */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header ul li a {
+    color: #fff;
+    background-color: #007bff; /* nastaví farbu pozadia tlačidiel */
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none; /* odstráni okraj okolo tlačidiel */
+    outline: none; /* odstráni predvolený štýl pre tlačidlá */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  .header ul li a:hover,
+  .header ul li a:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0056b3; /* zmení farbu pozadia tlačidiel pri najatí myšou */
+    border-color: #0056b3;
+  }
+  .footer {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .insta-icon {
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: -10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 20%;
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf)
+  }
+  .insta-icon:after,
+  .insta-icon:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #fff;
+    transform: translate(-50%, -50%);
+    content: ''
+  }
+  .insta-icon:before {
+    border-radius: 20%
+  }
+  .insta-icon:after {
+    width: 11px;height: 11px;
+    border-radius: 50%
+  }
+</style>
+<title></title>
 </head>
 <body>
-<h1>Motokary Strážske</h1>
-
-<ul>
+<div class="header">
+        <h1>Motokary Strážske</h1>
+        <div class="menu">
+            <ul>
                 <li><a href="{% url 'events' %}">Events</a></li>
                 <li><a href="{% url 'racetrack' %}">Race Track</a></li>
                 <li><a href="{% url 'reservation' %}">Reservation</a></li>
                 <li><a href="{% url 'login' %}">Login</a></li>
-</ul>
-
-
-    <div class="footer">
-    <p>© 2023 Motokary Strážske</p>
-
-
+            </ul>
+        </div>
     </div>
-
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<div class="footer">
+    <p>© 2023 Motokary Strážske<a href="https://www.instagram.com/"><span class="insta-icon"></span></a></p>
+</div>
 </body>
 </html>

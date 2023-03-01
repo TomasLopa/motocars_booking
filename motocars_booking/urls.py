@@ -27,15 +27,14 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     #path('login/', login, name='login'),
-    path('base/', base, name='base'),
+    path('', base, name='base'),
     path('events/', events, name='events'),
     path('racetrack/', racetrack, name='racetrack'),
     path('reservation/', reservation, name='reservation'),
     path('reservation_list/', reservation_list, name='reservation_list'),
     path('reservation_detail/', reservation_detail, name='reservation_detail'),
     path('create_reservation/', create_reservation, name='create_reservation'),
-    path('gallery/', gallery, name='gallery'),
-    path('', home, name='home'),
+    path('home/', home, name='home'),
 
 
 
